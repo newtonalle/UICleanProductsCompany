@@ -117,17 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Em uma escola na cidade de Curitiba, Newton Alle trabalhava como zelador no Sesi Internacional. Ele adorava mater todos os ambientes limpos, mas havia um problema, muitos produtos de limpeza tinham cheiros muito forte de produto químico, ou os alunos tinham alergias. </value>
   </data>
-  <data name="Prod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Prod1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Então, junto com seu amigo Bruno Poss, um químico recém-formado, começaram a experimentar fórmulas simples em casa. Usavam ingredientes como limão, vinagre, bicarbonato e óleos essenciais. Testaram, ajustaram, e em pouco tempo, tinham um sabão multiuso que limpava bem, deixava um aroma de lavanda e ainda era biodegradável.
+</value>
   </data>
-  <data name="Prod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Prod2.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Prod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Prod3.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Newton começou vendendo o produto para vizinhos e professores da escola. O boca-a-boca fez a popularidade crescer, e em menos de um ano, com financiamento coletivo e apoio de cooperativas locais, surgiu a empresa Nettoyage Limpezas, com o lema: “Sua casa limpa". Seu mundo também.”</value>
   </data>
 </root>

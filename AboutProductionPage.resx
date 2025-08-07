@@ -117,17 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Sabão: A produção começa com a coleta e filtragem de óleo de cozinha usado, que é reaproveitado como base principal. Em seguida, prepara-se uma solução de soda cáustica com água, que é cuidadosamente misturada ao óleo aquecido junto com álcool, acelerando o processo de saponificação. A mistura é mexida até atingir uma consistência cremosa (ponto de traço), momento em que se adicionam óleos essenciais para aroma e propriedades antibacterianas.</value>
   </data>
-  <data name="Prod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Prod1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>O sabão é então moldado e deixado para endurecer por 48 horas, seguido de um período de cura de 3 a 4 semanas em local ventilado. Após esse tempo, está pronto para ser cortado, embalado e distribuído como um produto eficaz, sustentável e seguro para uso doméstico.</value>
   </data>
-  <data name="Prod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Prod2.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Prod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Prod3.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Detergente: A base começa com água quente e sabão de coco ralado, ao qual se adicionam bicarbonato de sódio, vinagre de álcool e óleo essencial cítrico. Depois de resfriado, o líquido é coado e armazenado em frascos recicláveis com rótulo, pronto para o uso doméstico com ação limpadora suave e ecológica.</value>
   </data>
 </root>
