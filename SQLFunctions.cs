@@ -1,6 +1,6 @@
-﻿using System.Data;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using System;
+using System.Data;
+using System.IO;
 using MySql.Data.MySqlClient;
 
 // new SQLFunctions().CreateDataInDatabase()
@@ -10,6 +10,125 @@ namespace UICleanProductsCompany
 {
     internal class SQLFunctions
     {
+        public void ImportFileIntoDatabase(string tableName)
+        {
+            string connStr = "datasource=localhost;username=root;password='';database=sistema;";
+            string filePath = $@"..\..\Database\{tableName}.csv";          
+
+            if (!File.Exists(filePath))            
+                return;
+            
+
+            using (var conn = new MySqlConnection(connStr))
+            {
+                conn.Open();
+                var lines = File.ReadAllLines(filePath);
+
+                // Skip header (line 0)
+                var columnNames = lines[0].Split(',');
+
+                for (int i = 1; i < lines.Length; i++)
+                {
+                    var columns = lines[i].Split(',');
+
+                    switch(tableName)
+                    {
+                        case "users":
+                            {
+                                string query = $"INSERT INTO {tableName} ({columnNames[0]}, {columnNames[1]}, {columnNames[2]}, {columnNames[3]}, {columnNames[4]}, {columnNames[5]}) VALUES (@c1, @c2, @c3, @c4, @c5, @c6)";
+                                using (var cmd = new MySqlCommand(query, conn))
+                                {
+                                    cmd.Parameters.AddWithValue("@c1", columns[0]);
+                                    cmd.Parameters.AddWithValue("@c2", columns[1]);
+                                    cmd.Parameters.AddWithValue("@c3", columns[2]);
+                                    cmd.Parameters.AddWithValue("@c4", columns[3]);
+                                    cmd.Parameters.AddWithValue("@c5", columns[4]);
+                                    cmd.Parameters.AddWithValue("@c6", columns[5]);
+                                    cmd.ExecuteNonQuery();
+                                }
+                                break;
+                            }
+                        case "products":
+                            {
+                                string query = $"INSERT INTO {tableName} ({columnNames[0]}, {columnNames[1]}, {columnNames[2]}, {columnNames[3]}) VALUES (@c1, @c2, @c3, @c4)";
+                                using (var cmd = new MySqlCommand(query, conn))
+                                {
+                                    cmd.Parameters.AddWithValue("@c1", columns[0]);
+                                    cmd.Parameters.AddWithValue("@c2", columns[1]);
+                                    cmd.Parameters.AddWithValue("@c3", columns[2]);
+                                    cmd.Parameters.AddWithValue("@c4", columns[3]);
+                                    cmd.ExecuteNonQuery();
+                                }
+                                break;
+                            }
+                        case "configuration":
+                            {
+                                string query = $"INSERT INTO {tableName} ({columnNames[0]}, {columnNames[1]}, {columnNames[2]}, {columnNames[3]}, {columnNames[4]}) VALUES (@c1, @c2, @c3, @c4, @c5)";
+                                using (var cmd = new MySqlCommand(query, conn))
+                                {
+                                    cmd.Parameters.AddWithValue("@c1", columns[0]);
+                                    cmd.Parameters.AddWithValue("@c2", columns[1]);
+                                    cmd.Parameters.AddWithValue("@c3", columns[2]);
+                                    cmd.Parameters.AddWithValue("@c4", columns[3]);
+                                    cmd.Parameters.AddWithValue("@c5", columns[4]);
+                                    cmd.ExecuteNonQuery();
+                                }
+                                break;
+                            }
+                        case "currentShopping":
+                            {
+                                string query = $"INSERT INTO {tableName} ({columnNames[0]}, {columnNames[1]}, {columnNames[2]}, {columnNames[3]}) VALUES (@c1, @c2, @c3, @c4)";
+                                using (var cmd = new MySqlCommand(query, conn))
+                                {
+                                    cmd.Parameters.AddWithValue("@c1", columns[0]);
+                                    cmd.Parameters.AddWithValue("@c2", columns[1]);
+                                    cmd.Parameters.AddWithValue("@c3", columns[2]);
+                                    cmd.Parameters.AddWithValue("@c4", columns[3]);                                    
+                                    cmd.ExecuteNonQuery();
+                                }
+                                break;
+                            }
+                    }
+                }
+            }
+
+            Console.WriteLine("CSV imported successfully.");       
+        }
+        public void ConvertDatabaseToFile(string tableName)
+        {
+            string connStr = "datasource=localhost;username=root;password='';database=sistema;";
+            string filePath = $@"..\..\Database\{tableName}.csv";
+
+            using (var conn = new MySqlConnection(connStr))
+            {
+                conn.Open();
+                string query = $"SELECT * FROM {tableName}";
+                using (var cmd = new MySqlCommand(query, conn))
+                using (var reader = cmd.ExecuteReader())
+                using (var writer = new StreamWriter(filePath))
+                {
+                    // Write header
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        writer.Write(reader.GetName(i));
+                        if (i < reader.FieldCount - 1) writer.Write(",");
+                    }
+                    writer.WriteLine();
+
+                    // Write data
+                    while (reader.Read())
+                    {
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            writer.Write(reader[i].ToString());
+                            if (i < reader.FieldCount - 1) writer.Write(",");
+                        }
+                        writer.WriteLine();
+                    }
+                }
+            }
+        }
+
         public DataTable GetDataFromDatabase(string sql)
         {
             //select * from users

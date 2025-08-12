@@ -43,14 +43,16 @@
             this.ProductTypeFilterTextBox = new System.Windows.Forms.TextBox();
             this.AddProductToCartButton = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.TotalPriceLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.ShoppingCartListBox = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.TotalPriceLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ProductsListBox
@@ -101,6 +103,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label3);
@@ -208,6 +211,28 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Seu Carrinho";
             // 
+            // TotalPriceLabel
+            // 
+            this.TotalPriceLabel.AutoSize = true;
+            this.TotalPriceLabel.Location = new System.Drawing.Point(12, 358);
+            this.TotalPriceLabel.Name = "TotalPriceLabel";
+            this.TotalPriceLabel.Size = new System.Drawing.Size(60, 13);
+            this.TotalPriceLabel.TabIndex = 10;
+            this.TotalPriceLabel.Text = "Total: 0 R$";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(9, 283);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(221, 34);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Remover Produto Selecionado do Carrinho";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.RemoveSelectedProductFromCart);
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.LimeGreen;
@@ -229,27 +254,15 @@
             this.ShoppingCartListBox.Size = new System.Drawing.Size(218, 251);
             this.ShoppingCartListBox.TabIndex = 0;
             // 
-            // button1
+            // pictureBox1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(9, 283);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(221, 34);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Remover Produto Selecionado do Carrinho";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.RemoveSelectedProductFromCart);
-            // 
-            // TotalPriceLabel
-            // 
-            this.TotalPriceLabel.AutoSize = true;
-            this.TotalPriceLabel.Location = new System.Drawing.Point(12, 358);
-            this.TotalPriceLabel.Name = "TotalPriceLabel";
-            this.TotalPriceLabel.Size = new System.Drawing.Size(60, 13);
-            this.TotalPriceLabel.TabIndex = 10;
-            this.TotalPriceLabel.Text = "Total: 0 R$";
+            this.pictureBox1.Image = global::UICleanProductsCompany.Properties.Resources.Logo_2;
+            this.pictureBox1.Location = new System.Drawing.Point(209, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(27, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // StorePage
             // 
@@ -270,6 +283,7 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -295,5 +309,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label TotalPriceLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

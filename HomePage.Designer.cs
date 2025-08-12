@@ -108,14 +108,14 @@
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.loginToolStripMenuItem.Text = "Fazer Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.LoginButtonClicked);
             // 
             // criarContarToolStripMenuItem
             // 
             this.criarContarToolStripMenuItem.Name = "criarContarToolStripMenuItem";
-            this.criarContarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.criarContarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.criarContarToolStripMenuItem.Text = "Criar Conta";
             this.criarContarToolStripMenuItem.Click += new System.EventHandler(this.SignUpButtonClicked);
             // 
@@ -202,7 +202,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::UICleanProductsCompany.Properties.Resources.Logo;
+            this.pictureBox1.Image = global::UICleanProductsCompany.Properties.Resources.Logo_2;
             this.pictureBox1.Location = new System.Drawing.Point(278, 40);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(181, 178);

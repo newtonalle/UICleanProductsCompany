@@ -1,0 +1,3 @@
+id,username,email,password,type,isCurrentlyLoggedIn
+1,3,3,$2a$11$uKpMmR3sFGGiP12lMSVcI.8kYpfARd2CTOpyUQ50nAAURqLRSOo5.,2,True
+2,1111,11111,$2a$11$th6FfUYE/u/Bd7s4AL8AQerwNrRf5crkN17yTZx2VTntyMW4Euo5O,0,

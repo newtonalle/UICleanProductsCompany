@@ -18,6 +18,10 @@ namespace UICleanProductsCompany
             }
 
             new SQLFunctions().CreateTables();
+            new SQLFunctions().ImportFileIntoDatabase("users");
+            new SQLFunctions().ImportFileIntoDatabase("currentShopping");
+            new SQLFunctions().ImportFileIntoDatabase("configuration");
+            new SQLFunctions().ImportFileIntoDatabase("products");        
         }
 
         private void LogisticsProductionButtonClicked(object sender, EventArgs e)
@@ -123,6 +127,10 @@ namespace UICleanProductsCompany
 
         private void HomePage_FormClosing(object sender, FormClosingEventArgs e)
         {
+            new SQLFunctions().ConvertDatabaseToFile("users");
+            new SQLFunctions().ConvertDatabaseToFile("configuration");
+            new SQLFunctions().ConvertDatabaseToFile("currentShopping");
+            new SQLFunctions().ConvertDatabaseToFile("products");
             if (SharedValues.Instance.GetCurrentUserId() == -1)
                 new SQLFunctions().GenericChangeDataInDatabase($"update users set isCurrentlyLoggedIn = false where id = {SharedValues.Instance.GetCurrentUserId()}");
         }

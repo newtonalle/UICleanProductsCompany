@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutUsPage));
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,16 +47,6 @@
             this.label1.Size = new System.Drawing.Size(126, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nossa História";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::UICleanProductsCompany.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 70);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(266, 257);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -99,6 +89,16 @@
             this.label5.Size = new System.Drawing.Size(398, 52);
             this.label5.TabIndex = 7;
             this.label5.Text = resources.GetString("label5.Text");
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::UICleanProductsCompany.Properties.Resources.Logo_2;
+            this.pictureBox1.Location = new System.Drawing.Point(16, 70);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(266, 257);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // AboutUsPage
             // 
