@@ -1,0 +1,4 @@
+Contas Prontas:
+Jorge C. (Email: jorgecif@gmail.com, Senha: 7654321, conta comum) -> ligado com modo escuro e libras esterlinas
+GERENTE. (Email: gerente@gmail.com, Senha: 6543211, gerente) -> modo escuro
+ADMIN (Email: admin@gmail.com, Senha: 1234567, administrador) -> modo claro e dólares

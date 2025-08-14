@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.ProductPriceHigherFilterTextBox = new System.Windows.Forms.TextBox();
@@ -47,12 +48,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.ShoppingCartListBox = new System.Windows.Forms.ListBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ProductImage = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductImage)).BeginInit();
             this.SuspendLayout();
             // 
             // ProductsListBox
@@ -60,11 +62,13 @@
             this.ProductsListBox.FormattingEnabled = true;
             this.ProductsListBox.Location = new System.Drawing.Point(6, 19);
             this.ProductsListBox.Name = "ProductsListBox";
-            this.ProductsListBox.Size = new System.Drawing.Size(521, 589);
+            this.ProductsListBox.Size = new System.Drawing.Size(521, 407);
             this.ProductsListBox.TabIndex = 0;
+            this.ProductsListBox.SelectedIndexChanged += new System.EventHandler(this.ChangedSelection);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ProductImage);
             this.groupBox1.Controls.Add(this.ProductsListBox);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
@@ -117,6 +121,16 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "FIltro";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::UICleanProductsCompany.Properties.Resources.Logo_2;
+            this.pictureBox1.Location = new System.Drawing.Point(209, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(27, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // groupBox3
             // 
@@ -254,15 +268,14 @@
             this.ShoppingCartListBox.Size = new System.Drawing.Size(218, 251);
             this.ShoppingCartListBox.TabIndex = 0;
             // 
-            // pictureBox1
+            // ProductImage
             // 
-            this.pictureBox1.Image = global::UICleanProductsCompany.Properties.Resources.Logo_2;
-            this.pictureBox1.Location = new System.Drawing.Point(209, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(27, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.ProductImage.Location = new System.Drawing.Point(178, 432);
+            this.ProductImage.Name = "ProductImage";
+            this.ProductImage.Size = new System.Drawing.Size(190, 176);
+            this.ProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProductImage.TabIndex = 1;
+            this.ProductImage.TabStop = false;
             // 
             // StorePage
             // 
@@ -279,11 +292,12 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -310,5 +324,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label TotalPriceLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ProductImage;
     }
 }

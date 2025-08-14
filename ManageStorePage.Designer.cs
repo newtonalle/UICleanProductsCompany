@@ -54,9 +54,18 @@
             this.BuyerNameFilterTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.BuyerNameLabel = new System.Windows.Forms.Label();
+            this.TotalPriceLabel = new System.Windows.Forms.Label();
+            this.CurrentShoppingItemsGroupBox = new System.Windows.Forms.GroupBox();
+            this.ShopItemsListBox = new System.Windows.Forms.ListBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.NewProductGroupBox = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.FileNameTextBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -65,11 +74,7 @@
             this.NewProductPriceTextBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.DeleteSelectedProductButton = new System.Windows.Forms.Button();
-            this.ShopItemsListBox = new System.Windows.Forms.ListBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.CurrentShoppingItemsGroupBox = new System.Windows.Forms.GroupBox();
-            this.TotalPriceLabel = new System.Windows.Forms.Label();
-            this.BuyerNameLabel = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -77,10 +82,10 @@
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.CurrentShoppingItemsGroupBox.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.NewProductGroupBox.SuspendLayout();
-            this.CurrentShoppingItemsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // ProductsListBox
@@ -88,7 +93,7 @@
             this.ProductsListBox.FormattingEnabled = true;
             this.ProductsListBox.Location = new System.Drawing.Point(9, 16);
             this.ProductsListBox.Name = "ProductsListBox";
-            this.ProductsListBox.Size = new System.Drawing.Size(425, 186);
+            this.ProductsListBox.Size = new System.Drawing.Size(425, 212);
             this.ProductsListBox.TabIndex = 0;
             // 
             // groupBox1
@@ -96,7 +101,7 @@
             this.groupBox1.Controls.Add(this.ProductsListBox);
             this.groupBox1.Location = new System.Drawing.Point(6, 19);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(442, 208);
+            this.groupBox1.Size = new System.Drawing.Size(442, 244);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Produtos";
@@ -140,7 +145,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(454, 19);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(229, 208);
+            this.groupBox2.Size = new System.Drawing.Size(229, 244);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "FIltro";
@@ -341,19 +346,63 @@
             this.groupBox7.Controls.Add(this.label9);
             this.groupBox7.Location = new System.Drawing.Point(284, 19);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(587, 380);
+            this.groupBox7.Size = new System.Drawing.Size(587, 434);
             this.groupBox7.TabIndex = 12;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Compra Selecionada";
+            // 
+            // BuyerNameLabel
+            // 
+            this.BuyerNameLabel.AutoSize = true;
+            this.BuyerNameLabel.Location = new System.Drawing.Point(380, 192);
+            this.BuyerNameLabel.Name = "BuyerNameLabel";
+            this.BuyerNameLabel.Size = new System.Drawing.Size(107, 13);
+            this.BuyerNameLabel.TabIndex = 11;
+            this.BuyerNameLabel.Text = "Nome do Comprador:";
+            // 
+            // TotalPriceLabel
+            // 
+            this.TotalPriceLabel.AutoSize = true;
+            this.TotalPriceLabel.Location = new System.Drawing.Point(380, 236);
+            this.TotalPriceLabel.Name = "TotalPriceLabel";
+            this.TotalPriceLabel.Size = new System.Drawing.Size(60, 13);
+            this.TotalPriceLabel.TabIndex = 10;
+            this.TotalPriceLabel.Text = "Total: 0 R$";
+            // 
+            // CurrentShoppingItemsGroupBox
+            // 
+            this.CurrentShoppingItemsGroupBox.Controls.Add(this.ShopItemsListBox);
+            this.CurrentShoppingItemsGroupBox.Location = new System.Drawing.Point(9, 55);
+            this.CurrentShoppingItemsGroupBox.Name = "CurrentShoppingItemsGroupBox";
+            this.CurrentShoppingItemsGroupBox.Size = new System.Drawing.Size(354, 352);
+            this.CurrentShoppingItemsGroupBox.TabIndex = 9;
+            this.CurrentShoppingItemsGroupBox.TabStop = false;
+            this.CurrentShoppingItemsGroupBox.Text = "Items";
+            // 
+            // ShopItemsListBox
+            // 
+            this.ShopItemsListBox.FormattingEnabled = true;
+            this.ShopItemsListBox.Location = new System.Drawing.Point(6, 19);
+            this.ShopItemsListBox.Name = "ShopItemsListBox";
+            this.ShopItemsListBox.Size = new System.Drawing.Size(342, 316);
+            this.ShopItemsListBox.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(261, 39);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(0, 13);
+            this.label14.TabIndex = 8;
             // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.groupBox4);
             this.groupBox8.Controls.Add(this.groupBox7);
             this.groupBox8.Controls.Add(this.groupBox5);
-            this.groupBox8.Location = new System.Drawing.Point(12, 251);
+            this.groupBox8.Location = new System.Drawing.Point(12, 287);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(877, 409);
+            this.groupBox8.Size = new System.Drawing.Size(877, 426);
             this.groupBox8.TabIndex = 13;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Administrar Compras em Andamento";
@@ -366,13 +415,17 @@
             this.groupBox9.Controls.Add(this.groupBox2);
             this.groupBox9.Location = new System.Drawing.Point(12, 12);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(877, 233);
+            this.groupBox9.Size = new System.Drawing.Size(877, 269);
             this.groupBox9.TabIndex = 1;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Administrar Produtos";
             // 
             // NewProductGroupBox
             // 
+            this.NewProductGroupBox.Controls.Add(this.label17);
+            this.NewProductGroupBox.Controls.Add(this.label16);
+            this.NewProductGroupBox.Controls.Add(this.FileNameTextBox);
+            this.NewProductGroupBox.Controls.Add(this.label15);
             this.NewProductGroupBox.Controls.Add(this.label13);
             this.NewProductGroupBox.Controls.Add(this.label12);
             this.NewProductGroupBox.Controls.Add(this.label11);
@@ -382,10 +435,48 @@
             this.NewProductGroupBox.Controls.Add(this.button2);
             this.NewProductGroupBox.Location = new System.Drawing.Point(690, 19);
             this.NewProductGroupBox.Name = "NewProductGroupBox";
-            this.NewProductGroupBox.Size = new System.Drawing.Size(181, 165);
+            this.NewProductGroupBox.Size = new System.Drawing.Size(181, 208);
             this.NewProductGroupBox.TabIndex = 11;
             this.NewProductGroupBox.TabStop = false;
             this.NewProductGroupBox.Text = "Novo Produto";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(22, 137);
+            this.label17.MaximumSize = new System.Drawing.Size(170, 0);
+            this.label17.MinimumSize = new System.Drawing.Size(20, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(148, 26);
+            this.label17.TabIndex = 12;
+            this.label17.Text = "Arquivo deve ser importado a partir da pasta ProductImages";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(86, 93);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(89, 13);
+            this.label16.TabIndex = 11;
+            this.label16.Text = "Nome do Arquivo";
+            // 
+            // FileNameTextBox
+            // 
+            this.FileNameTextBox.Location = new System.Drawing.Point(87, 110);
+            this.FileNameTextBox.Name = "FileNameTextBox";
+            this.FileNameTextBox.Size = new System.Drawing.Size(85, 20);
+            this.FileNameTextBox.TabIndex = 10;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(139, 94);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(0, 13);
+            this.label15.TabIndex = 9;
             // 
             // label13
             // 
@@ -435,7 +526,7 @@
             // 
             this.NewProductPriceTextBox.Location = new System.Drawing.Point(6, 110);
             this.NewProductPriceTextBox.Name = "NewProductPriceTextBox";
-            this.NewProductPriceTextBox.Size = new System.Drawing.Size(168, 20);
+            this.NewProductPriceTextBox.Size = new System.Drawing.Size(75, 20);
             this.NewProductPriceTextBox.TabIndex = 1;
             // 
             // button2
@@ -443,7 +534,7 @@
             this.button2.BackColor = System.Drawing.Color.LimeGreen;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(7, 136);
+            this.button2.Location = new System.Drawing.Point(6, 175);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(168, 23);
             this.button2.TabIndex = 0;
@@ -456,7 +547,7 @@
             this.DeleteSelectedProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.DeleteSelectedProductButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteSelectedProductButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.DeleteSelectedProductButton.Location = new System.Drawing.Point(690, 190);
+            this.DeleteSelectedProductButton.Location = new System.Drawing.Point(690, 232);
             this.DeleteSelectedProductButton.Name = "DeleteSelectedProductButton";
             this.DeleteSelectedProductButton.Size = new System.Drawing.Size(181, 31);
             this.DeleteSelectedProductButton.TabIndex = 10;
@@ -464,55 +555,15 @@
             this.DeleteSelectedProductButton.UseVisualStyleBackColor = false;
             this.DeleteSelectedProductButton.Click += new System.EventHandler(this.DeleteSelectedProduct);
             // 
-            // ShopItemsListBox
+            // openFileDialog1
             // 
-            this.ShopItemsListBox.FormattingEnabled = true;
-            this.ShopItemsListBox.Location = new System.Drawing.Point(6, 19);
-            this.ShopItemsListBox.Name = "ShopItemsListBox";
-            this.ShopItemsListBox.Size = new System.Drawing.Size(342, 290);
-            this.ShopItemsListBox.TabIndex = 1;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(261, 39);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(0, 13);
-            this.label14.TabIndex = 8;
-            // 
-            // CurrentShoppingItemsGroupBox
-            // 
-            this.CurrentShoppingItemsGroupBox.Controls.Add(this.ShopItemsListBox);
-            this.CurrentShoppingItemsGroupBox.Location = new System.Drawing.Point(9, 55);
-            this.CurrentShoppingItemsGroupBox.Name = "CurrentShoppingItemsGroupBox";
-            this.CurrentShoppingItemsGroupBox.Size = new System.Drawing.Size(354, 316);
-            this.CurrentShoppingItemsGroupBox.TabIndex = 9;
-            this.CurrentShoppingItemsGroupBox.TabStop = false;
-            this.CurrentShoppingItemsGroupBox.Text = "Items";
-            // 
-            // TotalPriceLabel
-            // 
-            this.TotalPriceLabel.AutoSize = true;
-            this.TotalPriceLabel.Location = new System.Drawing.Point(380, 236);
-            this.TotalPriceLabel.Name = "TotalPriceLabel";
-            this.TotalPriceLabel.Size = new System.Drawing.Size(60, 13);
-            this.TotalPriceLabel.TabIndex = 10;
-            this.TotalPriceLabel.Text = "Total: 0 R$";
-            // 
-            // BuyerNameLabel
-            // 
-            this.BuyerNameLabel.AutoSize = true;
-            this.BuyerNameLabel.Location = new System.Drawing.Point(380, 192);
-            this.BuyerNameLabel.Name = "BuyerNameLabel";
-            this.BuyerNameLabel.Size = new System.Drawing.Size(107, 13);
-            this.BuyerNameLabel.TabIndex = 11;
-            this.BuyerNameLabel.Text = "Nome do Comprador:";
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // ManageStorePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 669);
+            this.ClientSize = new System.Drawing.Size(901, 716);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox8);
             this.Name = "ManageStorePage";
@@ -530,11 +581,11 @@
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.CurrentShoppingItemsGroupBox.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.NewProductGroupBox.ResumeLayout(false);
             this.NewProductGroupBox.PerformLayout();
-            this.CurrentShoppingItemsGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -583,5 +634,10 @@
         private System.Windows.Forms.GroupBox CurrentShoppingItemsGroupBox;
         private System.Windows.Forms.Label BuyerNameLabel;
         private System.Windows.Forms.Label TotalPriceLabel;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox FileNameTextBox;
+        private System.Windows.Forms.Label label17;
     }
 }

@@ -1,1 +1,19 @@
-id,name,type,price
+id,name,type,price,imageFileName
+1,Sabão de coco,Sabão tradicional,13,scoco.jpg
+2,Sabão de lavanda,Sabão tradicional,13,slavanda.jpg
+3,Sabão de capim-limão,Sabão tradicional,13,scapim.jpg
+4,Sabão de laranja,Sabão tradicional,13,slaranja.jpg
+7,Sabão de cravo da Índia,Sabão especial,15,scravo.jpg
+10,Sabão de canela,Sabão tradicional,13,scanela.jpg
+11,Sabão de baunilha,Sabão tradicional,13,sbaunilha.jpg
+12,Sabão de hortelã,Sabão especial,15,shortela.jpg
+13,Sabão de erva-doce,Sabão especial,15,serva.jpg
+15,Detergente de capim-limão,Detergente tradicional,70,dcapim.jpg
+16,Detergente neutro,Detergente tradicional,70,dneutro.jpg
+18,Detergente de frutas vermelhas,Detergente especial,80,dfrutasv.jpg
+19,Detergente de coco,Detergente especial,80,dcoco.jpg
+21,Detergente neutro (glicerina),Detergente tradicional,70,dglicerina.jpg
+22,Detergente de lavanda,Detergente especial,80,dlavanda.jpg
+23,Detergente de limão,Detergente tradicional,70,dlimao.jpg
+24,Detergente de maçã,Detergente tradicional,70,dmaca.jpg
+25,Detergente Marine,Detergente tradicional,70,dmarine.jpg

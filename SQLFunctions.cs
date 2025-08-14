@@ -35,7 +35,7 @@ namespace UICleanProductsCompany
                     {
                         case "users":
                             {
-                                string query = $"INSERT INTO {tableName} ({columnNames[0]}, {columnNames[1]}, {columnNames[2]}, {columnNames[3]}, {columnNames[4]}, {columnNames[5]}) VALUES (@c1, @c2, @c3, @c4, @c5, @c6)";
+                                string query = $"INSERT IGNORE INTO {tableName} ({columnNames[0]}, {columnNames[1]}, {columnNames[2]}, {columnNames[3]}, {columnNames[4]}, {columnNames[5]}) VALUES (@c1, @c2, @c3, @c4, @c5, @c6)";
                                 using (var cmd = new MySqlCommand(query, conn))
                                 {
                                     cmd.Parameters.AddWithValue("@c1", columns[0]);
@@ -50,20 +50,21 @@ namespace UICleanProductsCompany
                             }
                         case "products":
                             {
-                                string query = $"INSERT INTO {tableName} ({columnNames[0]}, {columnNames[1]}, {columnNames[2]}, {columnNames[3]}) VALUES (@c1, @c2, @c3, @c4)";
+                                string query = $"INSERT IGNORE INTO {tableName} ({columnNames[0]}, {columnNames[1]}, {columnNames[2]}, {columnNames[3]}, {columnNames[4]}) VALUES (@c1, @c2, @c3, @c4, @c5)";
                                 using (var cmd = new MySqlCommand(query, conn))
                                 {
                                     cmd.Parameters.AddWithValue("@c1", columns[0]);
                                     cmd.Parameters.AddWithValue("@c2", columns[1]);
                                     cmd.Parameters.AddWithValue("@c3", columns[2]);
                                     cmd.Parameters.AddWithValue("@c4", columns[3]);
+                                    cmd.Parameters.AddWithValue("@c5", columns[4]);
                                     cmd.ExecuteNonQuery();
                                 }
                                 break;
                             }
                         case "configuration":
                             {
-                                string query = $"INSERT INTO {tableName} ({columnNames[0]}, {columnNames[1]}, {columnNames[2]}, {columnNames[3]}, {columnNames[4]}) VALUES (@c1, @c2, @c3, @c4, @c5)";
+                                string query = $"INSERT IGNORE INTO {tableName} ({columnNames[0]}, {columnNames[1]}, {columnNames[2]}, {columnNames[3]}, {columnNames[4]}) VALUES (@c1, @c2, @c3, @c4, @c5)";
                                 using (var cmd = new MySqlCommand(query, conn))
                                 {
                                     cmd.Parameters.AddWithValue("@c1", columns[0]);
@@ -77,7 +78,7 @@ namespace UICleanProductsCompany
                             }
                         case "currentShopping":
                             {
-                                string query = $"INSERT INTO {tableName} ({columnNames[0]}, {columnNames[1]}, {columnNames[2]}, {columnNames[3]}) VALUES (@c1, @c2, @c3, @c4)";
+                                string query = $"INSERT IGNORE INTO {tableName} ({columnNames[0]}, {columnNames[1]}, {columnNames[2]}, {columnNames[3]}) VALUES (@c1, @c2, @c3, @c4)";
                                 using (var cmd = new MySqlCommand(query, conn))
                                 {
                                     cmd.Parameters.AddWithValue("@c1", columns[0]);
@@ -207,7 +208,7 @@ namespace UICleanProductsCompany
 
             MySqlConnection conexaoB = new MySqlConnection(data_source);
 
-            sql = "create table if NOT EXISTS products(id int primary key auto_increment, name varchar(50), type varchar(50), price int);";
+            sql = "create table if NOT EXISTS products(id int primary key auto_increment, name varchar(50), type varchar(50), price int, imageFileName varchar(100));";
 
             MySqlCommand comandoB = new MySqlCommand(sql, conexaoB);
 

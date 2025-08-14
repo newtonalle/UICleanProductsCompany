@@ -1,1 +1,4 @@
 id,username,email,password,type,isCurrentlyLoggedIn
+2,ADMIN,admin@gmail.com,$2a$11$a9YvE1Fq8WYl1BtrWr6Phe32D1dzbhw4N85JZSJWZ5RXNPPD3vCoO,2,True
+3,Jorge C.,jorgecif@gmail.com,$2a$11$fidTVUbz9Di31vnKjcUMpeyDLRGepeiihkz6qJ/LDn.VWopfMDv.2,0,True
+4,GERENTE,gerente@gmail.com,$2a$11$ZXdkXDGIEtCAWNYXvtOPaO2.gPdx1oCq5Q3Vj9lTrQ4vYlBKThIa2,1,False

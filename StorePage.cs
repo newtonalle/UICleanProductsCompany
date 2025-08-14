@@ -114,7 +114,7 @@ namespace UICleanProductsCompany
 
             if (oldShopping.Rows.Count > 0)
                 new SQLFunctions().GenericChangeDataInDatabase($"update currentShopping set status = 'ended' where id = {oldShopping.Rows[0][0]}");
-            
+
             ShowProductsInCart();
         }
 
@@ -157,7 +157,7 @@ namespace UICleanProductsCompany
             SharedValues.Instance.UpdatePageTheme(this.Controls, this);
 
             int permitionType = int.Parse(new SQLFunctions().GetDataFromDatabase($"select * from users where id = {SharedValues.Instance.GetCurrentUserId()}").Rows[0][4].ToString());
-            
+
 
             ShowProducts();
             ShowProductsInCart();
@@ -167,6 +167,28 @@ namespace UICleanProductsCompany
         {
             ShowProducts();
 
+        }
+
+        private void ChangedSelection(object sender, EventArgs e)
+        {
+            try
+            {
+                new SQLFunctions().CreateTables();
+
+                if (productIdsByIndex.Count > ProductsListBox.SelectedIndex && ProductsListBox.SelectedIndex != -1)
+                {
+                    int selectedId = productIdsByIndex[ProductsListBox.SelectedIndex];
+
+                    DataTable foundProducts = new SQLFunctions().GetDataFromDatabase($"select * from products where id = {selectedId}");
+
+                    string URL = foundProducts.Rows[0][4].ToString();
+                    ProductImage.Load($@"..\..\ProductImages\{URL}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro inesperado (link inválido, não conectado ao banco ou falta de internet): " + ex);
+            }
         }
     }
 }

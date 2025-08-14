@@ -19,9 +19,14 @@ namespace UICleanProductsCompany
 
         private void CreateProduct(object sender, EventArgs e)
         {
-            new SQLFunctions().GenericChangeDataInDatabase($"insert into products(name, type, price) values('{NewProductNameTextBox.Text}', '{NewProductTypeTextBox.Text}', {float.Parse(NewProductPriceTextBox.Text)})");
+            if(FileNameTextBox.Text.Length >= 0) { 
+            new SQLFunctions().GenericChangeDataInDatabase($"insert into products(name, type, price, imageFileName) values('{NewProductNameTextBox.Text}', '{NewProductTypeTextBox.Text}', {float.Parse(NewProductPriceTextBox.Text)}, '{FileNameTextBox.Text}')");
             ShowProducts();
             MessageBox.Show("Novo Produto Criado!");
+            } else
+            {
+                MessageBox.Show("Por favor selecione uma imagem");
+            }
         }
 
         private void RefreshPage(object sender, EventArgs e)
@@ -112,7 +117,7 @@ namespace UICleanProductsCompany
 
             ShowProducts();
 
-            MessageBox.Show("Product Deleted Successfully!");
+            MessageBox.Show("Produto Deletado com Sucesso!");
         }
 
         private void ShowProductsLoad(object sender, EventArgs e)

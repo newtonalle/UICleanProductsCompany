@@ -171,7 +171,7 @@ namespace UICleanProductsCompany
 
                 new SQLFunctions().GenericChangeDataInDatabase($"insert into configuration(userId,theme,volume,currency) values({SharedValues.Instance.GetCurrentUserId()},'{SharedValues.Instance.GetAppTheme()}',{SharedValues.Instance.appVolume},'{SharedValues.Instance.GetCurrency()}')");
             }
-            MessageBox.Show("Configurations Saved!");
+            MessageBox.Show("Configurações Salvas!");
         }
 
     }
